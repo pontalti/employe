@@ -24,7 +24,7 @@ public class EmployeDocument implements Serializable{
     private String surname;
 
     @Indexed
-    private Double salary;
+    private Integer salary;
 
     @Field("emails")
     private Set<String> emails;
