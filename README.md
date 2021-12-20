@@ -124,12 +124,12 @@
 				]
 			}
 			```
-		- End-point type GET to list all documents ->  ``` http://localhost:8080/employe/all ```
-		- End-point type GET TO get documet by id ->  ``` http://localhost:8080/employe/id/<PASTE_THE_DOCUMENT_ID> ```
-		- End-point type DELETE to delete the documet by id ->  ``` http://localhost:8080/employe/id/<PASTE_THE_DOCUMENT_ID>  ```
-		- End-point type GET to list of documents by salary range -> ``` http://localhost:8080/employe/salary/range/<INITIAL_INTEGER_SALARY_AMONT>/<END_INTEGER_SALARY_AMONT> ```
-		- End-point type PUT to update document content -> ``` http://localhost:8080/employe/ ```7
-			- Use the Json below as a model, paste the id of the document and feel free to change, add or remove any data.
+	- End-point type GET to list all documents ->  ``` http://localhost:8080/employe/all ```
+	- End-point type GET TO get documet by id ->  ``` http://localhost:8080/employe/id/<PASTE_THE_DOCUMENT_ID> ```
+	- End-point type DELETE to delete the documet by id ->  ``` http://localhost:8080/employe/id/<PASTE_THE_DOCUMENT_ID>  ```
+	- End-point type GET to list of documents by salary range -> ``` http://localhost:8080/employe/salary/range/<INITIAL_INTEGER_SALARY_AMONT>/<END_INTEGER_SALARY_AMONT> ```
+	- End-point type PUT to update document content -> ``` http://localhost:8080/employe/ ```7
+		- Use the Json below as a model, paste the id of the document and feel free to change, add or remove any data.
 			``` 
 			{
 				"id": "<PASTE_THE_DOCUMENT_ID>",
