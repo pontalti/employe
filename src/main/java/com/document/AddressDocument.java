@@ -1,7 +1,5 @@
 package com.document;
 
-import java.io.Serializable;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -9,7 +7,7 @@ import lombok.Data;
 @Data
 @Builder
 @AllArgsConstructor
-public class AddressDocument implements Serializable{
+public class AddressDocument{
     
     private String addressType;
     private String street;

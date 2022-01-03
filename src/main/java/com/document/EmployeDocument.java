@@ -1,6 +1,5 @@
 package com.document;
 
-import java.io.Serializable;
 import java.util.Set;
 
 import org.springframework.data.annotation.Id;
@@ -16,7 +15,7 @@ import lombok.Data;
 @Builder
 @AllArgsConstructor
 @Document(collection = "Employe")
-public class EmployeDocument implements Serializable{
+public class EmployeDocument{
     
     @Id
     private String id;
