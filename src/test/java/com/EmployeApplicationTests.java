@@ -3,7 +3,10 @@ package com;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class EmployeApplicationTests {
+public class EmployeApplicationTests {
 
-
+	public EmployeApplicationTests() {
+		super();
+	}
+	
 }

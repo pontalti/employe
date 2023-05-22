@@ -7,6 +7,6 @@ spring:
       indent-output: true
   data:
     mongodb:
-      database: db_employe
+      database: employe_db
       port: 27017
       host: mongo_db
