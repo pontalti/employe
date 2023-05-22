@@ -24,7 +24,7 @@
    - gh version 2.2.0
    - curl 7.55.1
    - Postman for Windows Version 9.1.5
-   - MongoDB Comunity 6.0.6
+   - MongoDB Comunity 6.0.6 *(For localhost)
    - Docker
 		- Docker for Windows (Docker version 20.10.11) 
 		- Docker Desktop for Windows 4.3.0
