@@ -5,24 +5,23 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import org.springframework.beans.BeanUtils;
+import org.springframework.stereotype.Service;
+
 import com.document.AddressDocument;
 import com.document.EmployeDocument;
 import com.record.AddressRecord;
 import com.record.EmployeRecord;
 import com.repository.EmployeRepository;
 
-import org.springframework.beans.BeanUtils;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 @Service
 public class EmployeServiceImpl implements EmployeService {
 
-    @Autowired
     private EmployeRepository repository;
 
-    public EmployeServiceImpl() {
+    public EmployeServiceImpl(EmployeRepository repository) {
         super();
+        this.repository = repository;
     }
 
     @Override

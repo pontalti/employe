@@ -1,9 +1,9 @@
-FROM maven:3.8.4-openjdk-17-slim AS build
+FROM maven:3.9.5-amazoncorretto-21 AS build
 COPY src /home/app/src
 COPY pom.xml /home/app
-RUN mvn -f /home/app/pom.xml clean package spring-boot:repackage
+RUN mvn -f /home/app/pom.xml clean package spring-boot:repackage 
 
-FROM openjdk:17
+FROM openjdk:21
 LABEL Gustavo Pontalti
 ENV JAVA_TOOL_OPTIONS -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:8000
 WORKDIR /app

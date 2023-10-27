@@ -18,7 +18,7 @@
 			- Language Support for Java(TM) by Red Hat
 			- YAML - Red Hat
 			- Lombok Annotations Support for VS Code
-   - JDK 17.0.1
+   - JDK 21
    - Maven  3.6.3
    - git 2.34.0.windows.1
    - gh version 2.2.0
@@ -26,8 +26,8 @@
    - Postman for Windows Version 9.1.5
    - MongoDB Comunity 6.0.6 *(For localhost)
    - Docker
-		- Docker for Windows (Docker version 20.10.11) 
-		- Docker Desktop for Windows 4.3.0
+		- Docker for Windows
+		- Docker Desktop for Windows
 
 2. Install if necessary git, follow the instruction on the link below.
 	- ```  https://git-scm.com/downloads ```
@@ -43,12 +43,12 @@
 5. Clone the repository
 	- ``` git clone git@github.com:pontalti/employe.git ```
 
-6. If necessary install the JDK 17, download it on the link below
+6. If necessary install the JDK 21, download it on the link below
 	- ``` https://www.oracle.com/java/technologies/downloads/ ```
 	- Choose your distribution and install the JDK
 	- Create the Java Home
-		- Windows -> ``` JAVA_HOME = [YOUR_PATCH]\jdk-17.0.1 ```
-		- Linux -> ``` JAVA_HOME = [YOUR_PATCH]/jdk-17.0.1 ```
+		- Windows -> ``` JAVA_HOME = [YOUR_PATCH]\jdk-21 ```
+		- Linux -> ``` JAVA_HOME = [YOUR_PATCH]/jdk-21 ```
 	- Put the JAVA_HOME on the System Patch
 		- For Windows -> ``` %JAVA_HOME%\bin ```
 		- For Linux -> ``` export PATH=$JAVA_HOME/bin:$PATH ```
@@ -67,7 +67,7 @@
 	- Test Maven on command line
 		- ``` mvn --version ```
 
-8. If necessary install your favorite IDE with support to JDK 17.
+8. If necessary install your favorite IDE with support to JDK 21.
 
 9. if necessary Install the project Lombok on your IDE, follow the instruction on the link below.
 	- ``` https://projectlombok.org/setup/overview ```
@@ -159,6 +159,6 @@
 			```		
 
 15. To access the OpenAPI definition, please use the link below
-	- ``` http://localhost:8080/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config#/ ``` 
+	- ``` http://localhost:8080/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config#/ ```
 
 

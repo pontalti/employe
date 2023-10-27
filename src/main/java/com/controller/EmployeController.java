@@ -2,14 +2,6 @@ package com.controller;
 
 import java.util.List;
 
-import jakarta.validation.Valid;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
-
-import com.record.EmployeRecord;
-import com.service.EmployeService;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -23,12 +15,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.record.EmployeRecord;
+import com.service.EmployeService;
+
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+
 @RestController
 @RequestMapping("/employe")
 public class EmployeController {
     
-    @Autowired
     private EmployeService service;
+    
+    public EmployeController(EmployeService service) {
+		super();
+		this.service = service;
+	}
 
 	@GetMapping
 	public String home() {

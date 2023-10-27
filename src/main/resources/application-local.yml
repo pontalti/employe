@@ -1,0 +1,12 @@
+spring:
+  devtools:
+    remote.secret: teste 
+    add-properties: true
+  jackson:
+    serialization:
+      indent-output: true
+  data:
+    mongodb:
+      database: employe_db
+      port: 27017
+      host: localhost
