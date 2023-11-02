@@ -10,10 +10,12 @@ import org.springframework.data.mongodb.core.mapping.Field;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Builder
 @AllArgsConstructor
+@NoArgsConstructor
 @Document(collection = "Employe")
 public class EmployeDocument{
     
@@ -29,9 +31,5 @@ public class EmployeDocument{
     private Set<String> emails;
 
     private Set<AddressDocument> address;
-
-    public EmployeDocument(){
-        super();
-    }
 
 }

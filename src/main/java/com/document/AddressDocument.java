@@ -3,10 +3,12 @@ package com.document;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Builder
 @AllArgsConstructor
+@NoArgsConstructor
 public class AddressDocument{
     
     private String addressType;
@@ -14,8 +16,5 @@ public class AddressDocument{
     private String city;
     private String country;
 
-    public AddressDocument(){
-        super();
-    }
 
 }
