@@ -42,16 +42,15 @@ public class EmployeServiceImpl implements EmployeService {
     private Set<AddressDocument> extractAddressRecord(EmployeRecord record, final EmployeDocument document) {
         Set<AddressDocument> addressDocuments = Collections.emptySet();
         if( null != record.address() ){
-            addressDocuments =  record.address().stream().map(rec->{
-                var doc = AddressDocument
-                                        .builder()
-                                        .addressType(rec.addressType())
-                                        .street(rec.street())
-                                        .city(rec.city())
-                                        .country(rec.country())
-                                        .build();
-                return doc;
-            }).collect(Collectors.toSet());
+            addressDocuments =  record.address().stream().map(rec->
+                AddressDocument
+		                    .builder()
+		                    .addressType(rec.addressType())
+		                    .street(rec.street())
+		                    .city(rec.city())
+		                    .country(rec.country())
+		                    .build()
+            ).collect(Collectors.toSet());
         }
         return addressDocuments;
     }
@@ -113,21 +112,20 @@ public class EmployeServiceImpl implements EmployeService {
     }
 
     private Set<AddressRecord> extractedAddressRecord(EmployeDocument document) {
-        Set<AddressRecord> addressRecords = Collections.emptySet();
-        addressRecords = document.getAddress().stream().map(a->{
-                var addressRecord = new AddressRecord(a.getAddressType(), 
-                                                                a.getStreet(), 
-                                                                a.getCity(), 
-                                                                a.getCountry());
-                return addressRecord;
-            }).collect(Collectors.toSet());
+        Set<AddressRecord> addressRecords = Collections.emptySet();		
+        addressRecords = document.getAddress().stream().map(a->
+                						new AddressRecord(a.getAddressType(), 
+	                                                        a.getStreet(), 
+	                                                        a.getCity(), 
+	                                                        a.getCountry()))
+        										.collect(Collectors.toSet());
         return addressRecords;
     }
 
     @Override
     public List<EmployeRecord> getEmployesBySalaryRange(Integer from, Integer to) {
+    	var employeDocuments = this.repository.getEmployesBySalaryRange(from, to).orElse(Collections.emptyList());
         List<EmployeRecord> records = Collections.emptyList();
-        List<EmployeDocument> employeDocuments = this.repository.getEmployesBySalaryRange(from, to).orElse(Collections.emptyList());
         if( !employeDocuments.isEmpty() ){
             records = employeDocuments.parallelStream().map(document -> {
                 Set<AddressRecord> addressRecords = Collections.emptySet();

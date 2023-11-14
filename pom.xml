@@ -19,8 +19,8 @@
 	<description>Employe Mongodb project for Spring Boot</description>
 
 	<scm>
-		<connection>scm:git:https://github.com/pontalti/fiscalcode.git</connection>
-		<developerConnection>scm:git:https://github.com/pontalti/fiscalcode.git</developerConnection>
+		<connection>scm:git:https://github.com/pontalti/employe.git</connection>
+		<developerConnection>scm:git:https://github.com/pontalti/employe.git</developerConnection>
 		<url>https://github.com/pontalti/employe.git</url>
 	</scm>
 
@@ -154,7 +154,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>${project.name}</finalName>
+		<finalName>${warfinal.name}</finalName>
 		<pluginManagement>
 			<plugins>
 				<plugin>
@@ -190,7 +190,6 @@
 						</execution>
 					</executions>
 				</plugin>
-
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-compiler-plugin</artifactId>

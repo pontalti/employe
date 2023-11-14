@@ -1,6 +1,6 @@
 package com;
 
-import org.junit.jupiter.api.Assertions;
+import org.junit.Assert;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -21,16 +21,11 @@ public class EmployeApplicationTests {
 
 	@ParameterizedTest
 	@Tag("Important")
-	@DisplayName("fiscal Code Calculator Service Failure Test")
-	@CsvSource({",,,,,,SZODND83A27L378E"})
-	public void fiscalCodeCalculatorServiceFailureTest(	String name, 
-														String surname, 
-														String dob, 
-														String placeOfBirth, 
-														String state,
-														String gender, 
-														String taxCode) throws Exception {
-		Assertions.assertTrue(true);
+	@DisplayName("Test")
+	@CsvSource({"test"})
+	public void fiscalCodeCalculatorServiceFailureTest(String str) throws Exception {
+		Assert.assertTrue(true);
 	}
+	
 
 }
