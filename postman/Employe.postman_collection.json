@@ -12,14 +12,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/employe/all",
+					"raw": "http://localhost:8080/all",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"employe",
 						"all"
 					]
 				}
@@ -41,14 +40,13 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/employe/",
+					"raw": "http://localhost:8080/",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"employe",
 						""
 					]
 				}
@@ -61,16 +59,15 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/employe/id/61c0bcb05587c010348f6dc8",
+					"raw": "http://localhost:8080/id/681f83e5dd888c4f233b4e86",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"employe",
 						"id",
-						"61c0bcb05587c010348f6dc8"
+						"681f83e5dd888c4f233b4e86"
 					]
 				}
 			},
@@ -104,7 +101,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"id\": \"61c0875d9652961c61dcc821\",\r\n    \"name\": \"Edmundo\",\r\n    \"surname\": \"Souza\",\r\n    \"salary\": \"7500\",\r\n    \"emails\": [\r\n        \"blabla@google.com\",\r\n        \"blabla@msn.com\"\r\n    ],\r\n    \"address\": [\r\n        {\r\n            \"addressType\": \"Street\",\r\n            \"street\": \"Ortigara 9620\",\r\n            \"city\": \"Trento\",\r\n            \"country\": \"Italy\"\r\n        },\r\n        {\r\n            \"addressType\": \"Street\",\r\n            \"street\": \"Ortigara 171\",\r\n            \"city\": \"Vimercate\",\r\n            \"country\": \"Italy\"\r\n        }\r\n    ]\r\n}",
+					"raw": "{\r\n    \"id\": \"681f83e5dd888c4f233b4e86\",\r\n    \"name\": \"Edmundo\",\r\n    \"surname\": \"Souza\",\r\n    \"salary\": \"7510\",\r\n    \"emails\": [\r\n        \"blabla@google.com\",\r\n        \"blabla@msn.com\"\r\n    ],\r\n    \"address\": [\r\n        {\r\n            \"addressType\": \"Street\",\r\n            \"street\": \"Ortigara 9620\",\r\n            \"city\": \"Trento\",\r\n            \"country\": \"Italy\"\r\n        },\r\n        {\r\n            \"addressType\": \"Street\",\r\n            \"street\": \"Ortigara 171\",\r\n            \"city\": \"Vimercate\",\r\n            \"country\": \"Italy\"\r\n        }\r\n    ]\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -112,14 +109,13 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/employe/",
+					"raw": "http://localhost:8080/",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"employe",
 						""
 					]
 				}
@@ -132,18 +128,17 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/employe/salary/range/100/7500",
+					"raw": "http://localhost:8080/salary/range/100/7510",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"employe",
 						"salary",
 						"range",
 						"100",
-						"7500"
+						"7510"
 					]
 				}
 			},
