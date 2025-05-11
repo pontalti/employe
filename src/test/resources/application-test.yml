@@ -16,3 +16,8 @@ de:
     mongodb:
       embedded:
         version: 4.0.2 # version compatible with Fedora.
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui-custom.html
+    operations-sorter: method
