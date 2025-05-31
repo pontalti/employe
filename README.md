@@ -1,162 +1,208 @@
-# Employe service using Spring Boot, Maven, MongoDB and Docker 
+# 👨‍💼 Employee Service with Spring Boot, Maven, MongoDB, and Docker
 
-1. My Dev enviroment 👍
-   - Windows 10
-   - Visual Studio Code
-		- Plugins
-			- Extension Pack for Java - Microsoft
-			- Project Manager for Java - Microsoft
-			- Debugger for Java - Microsoft
-			- Maven for Java - Microsoft
-			- Remote - Containers - Microsoft
-			- Test Runner for Java - Microsoft
-			- Spring Initializr Java Support - Microsoft
-			- Spring Boot Dashboard - Microsoft
-			- Spring Boot Extension Pack - Pivotal
-			- Spring Boot Tools - Pivotal
-			- Dependency Analytics - Red Hat
-			- Language Support for Java(TM) by Red Hat
-			- YAML - Red Hat
-			- Lombok Annotations Support for VS Code
-   - JDK 21
-   - Maven  3.6.3
-   - git 2.34.0.windows.1
-   - gh version 2.2.0
-   - curl 7.55.1
-   - Postman for Windows Version 9.1.5
-   - MongoDB Comunity 6.0.6 *(For localhost)
-   - Docker
-		- Docker for Windows
-		- Docker Desktop for Windows
+A RESTful service to manage employee records using Spring Boot, Maven, MongoDB, and Docker.
 
-2. Install if necessary git, follow the instruction on the link below.
-	- ```  https://git-scm.com/downloads ```
-	- After install run the command below in the terminal
-		- ``` git config --global core.autocrlf true ```
+---
 
-3. Install if necessary gh, follow the instruction on the link below.
-	- ``` https://cli.github.com/manual/installation ```
+## 🧰 Development Environment
 
-4. try to access the link below
-	- ``` https://github.com/pontalti/employe ```
+- **OS**: Windows 10
+- **Java**: JDK 21  
+- **Build Tool**: Maven 3.6.3  
+- **Version Control**: Git 2.34.0  
+- **GitHub CLI**: gh 2.2.0  
+- **API Client**: Postman v9.1.5  
+- **Database**: MongoDB Community 6.0.6 (Local)  
+- **Containerization**: Docker + Docker Desktop
 
-5. Clone the repository
-	- ``` git clone git@github.com:pontalti/employe.git ```
+---
 
-6. If necessary install the JDK 21, download it on the link below
-	- ``` https://www.oracle.com/java/technologies/downloads/ ```
-	- Choose your distribution and install the JDK
-	- Create the Java Home
-		- Windows -> ``` JAVA_HOME = [YOUR_PATCH]\jdk-21 ```
-		- Linux -> ``` JAVA_HOME = [YOUR_PATCH]/jdk-21 ```
-	- Put the JAVA_HOME on the System Patch
-		- For Windows -> ``` %JAVA_HOME%\bin ```
-		- For Linux -> ``` export PATH=$JAVA_HOME/bin:$PATH ```
-	- Test JDK on command line
-		- ``` java -version ```		
+## ⚙️ Prerequisites & Setup
 
-7. If necessary install Maven, download it on the link below
-	- ``` https://maven.apache.org/download.cgi ```
-	- Extract compressed file in your prefered tool folder.
-	- Create the M2_HOME
-		- Windows -> ``` M2_HOME = [YOUR_PATCH]\apache-maven-3.6.3 ```
-		- Linux -> ``` M2_HOME = [YOUR_PATCH]/apache-maven-3.6.3 ```
-	- Put the Maven on the System Patch
-		- For Windows -> ``` %M2_HOME%\bin ```
-		- For Linux -> ``` export PATH=$M2_HOME/bin:$PATH ```
-	- Test Maven on command line
-		- ``` mvn --version ```
+### 1. Install Git  
+👉 [https://git-scm.com/downloads](https://git-scm.com/downloads)  
+Then run:  
+```bash
+git config --global core.autocrlf true
+```
 
-8. If necessary install your favorite IDE with support to JDK 21.
+### 2. Install GitHub CLI  
+👉 [https://cli.github.com/manual/installation](https://cli.github.com/manual/installation)
 
-9. if necessary Install the project Lombok on your IDE, follow the instruction on the link below.
-	- ``` https://projectlombok.org/setup/overview ```
+### 3. Clone the Repository  
+```bash
+git clone git@github.com:pontalti/employe.git
+```
 
-10. Open the project in favotite IDE
+### 4. Install JDK 21  
+👉 [https://www.oracle.com/java/technologies/downloads/](https://www.oracle.com/java/technologies/downloads/)
 
-11. To build please.
-	- Go to the project root folder.
-	- Run the command below.
-		- ``` mvn -U clean install package spring-boot:repackage ```
+Set `JAVA_HOME` and update your `PATH`:  
+**Windows:**
+```bash
+JAVA_HOME=C:\Path\To\jdk-21
+set PATH=%JAVA_HOME%\bin;%PATH%
+```
+**Linux:**
+```bash
+export JAVA_HOME=/path/to/jdk-21
+export PATH=$JAVA_HOME/bin:$PATH
+```
 
-12. To run the SpringBoot application with Docker.
-	- Please install Docker.
-	- Go to the project root folder.
-	- Run the commands below.
-		- ``` docker-compose build ```			
-		- ``` docker-compose up -d ```
-	- To check the log, please run the command below.
-		- ``` docker logs -f employe ```
-	- To use the Spring dev tools features please configure the -> ``` Spring Boot Remote ```
-		- Remote URL -> ``` http://localhost:8080/ ```
-	- To debug
-		- connect in remote JVM using the port -> ``` 8000 ```
-	
-13. if necessary install curl on Windows or Linux.
-	- for Windows -> ``` choco install curl ```
-	- for Linux(Ubuntu/Debian) -> ``` apt-get install curl ```
-	- for Linux(RHEL/CentOS/Fedora) -> ``` yum install curl ```
-	
-14. You call the end-points below using curl on your terminal or other tool like POSTMAN.
-	- End-point type POST to create a document -> ``` http://localhost:8080/ ```
-		- Use the Json below as a model.
-			``` 
-			{
-				"name": "Edmundo",
-				"surname": "Souza",
-				"salary": "7500",
-				"emails": [
-					"blabla@google.com",
-					"blabla@msn.com"
-				],
-				"address": [
-					{
-						"addressType": "Street",
-						"street": "Ortigara 9620",
-						"city": "Trento",
-						"country": "Italy"
-					},
-					{
-						"addressType": "Street",
-						"street": "Ortigara 171",
-						"city": "Vimercate",
-						"country": "Italy"
-					}
-				]
-			}
-			```
-	- End-point type GET to list all documents ->  ``` http://localhost:8080/all ```
-	- End-point type GET TO get documet by id ->  ``` http://localhost:8080/id/<PASTE_THE_DOCUMENT_ID> ```
-	- End-point type DELETE to delete the documet by id ->  ``` http://localhost:8080/id/<PASTE_THE_DOCUMENT_ID>  ```
-	- End-point type GET to list of documents by salary range -> ``` http://localhost:8080/salary/range/<INITIAL_INTEGER_SALARY_AMONT>/<END_INTEGER_SALARY_AMONT> ```
-	- End-point type PUT to update document content -> ``` http://localhost:8080/ ```7
-		- Use the Json below as a model, paste the id of the document and feel free to change, add or remove any data.
-			``` 
-			{
-				"id": "<PASTE_THE_DOCUMENT_ID>",
-				"name": "Edmundo",
-				"surname": "Souza",
-				"salary": "7500",
-				"emails": [
-					"blabla@google.com",
-					"blabla@msn.com"
-				],
-				"address": [
-					{
-						"addressType": "Street",
-						"street": "Ortigara 9620",
-						"city": "Trento",
-						"country": "Italy"
-					},
-					{
-						"addressType": "Street",
-						"street": "Ortigara 171",
-						"city": "Vimercate",
-						"country": "Italy"
-					}
-				]
-			}
-			```		
+Verify:  
+```bash
+java -version
+```
 
-15. To access the OpenAPI definition, please use the link below
-	- ``` http://localhost:8080/swagger-ui/index.html ```
+### 5. Install Maven  
+👉 [https://maven.apache.org/download.cgi](https://maven.apache.org/download.cgi)
+
+Set `M2_HOME` and update your `PATH`:  
+**Windows:**
+```bash
+M2_HOME=C:\Path\To\apache-maven-3.6.3
+set PATH=%M2_HOME%\bin;%PATH%
+```
+**Linux:**
+```bash
+export M2_HOME=/path/to/apache-maven-3.6.3
+export PATH=$M2_HOME/bin:$PATH
+```
+
+Verify:  
+```bash
+mvn --version
+```
+
+### 6. Install Project Lombok  
+👉 [https://projectlombok.org/setup/overview](https://projectlombok.org/setup/overview)
+
+---
+
+## 🚀 Build & Run
+
+### Build the Application
+```bash
+mvn -U clean install package spring-boot:repackage
+```
+
+### Run with Docker
+```bash
+docker-compose build
+docker-compose up -d
+```
+
+Check logs:
+```bash
+docker logs -f employe
+```
+
+Debugging:
+- Connect to remote JVM on port `8000`
+
+Spring Boot Remote DevTools:
+- URL: `http://localhost:8080/`
+
+---
+
+## 🧪 API Usage
+
+### Install curl *(if needed)*  
+**Windows**:  
+```bash
+choco install curl
+```  
+**Linux (Ubuntu/Debian)**:  
+```bash
+sudo apt-get install curl
+```  
+**Linux (RHEL/CentOS/Fedora)**:  
+```bash
+sudo yum install curl
+```
+
+### REST Endpoints
+
+#### ➕ Create Employee (POST)
+```bash
+http://localhost:8080/
+```
+**Request Body:**
+```json
+{
+  "name": "Edmundo",
+  "surname": "Souza",
+  "salary": "7500",
+  "emails": ["blabla@google.com", "blabla@msn.com"],
+  "address": [
+    {
+      "addressType": "Street",
+      "street": "Ortigara 9620",
+      "city": "Trento",
+      "country": "Italy"
+    },
+    {
+      "addressType": "Street",
+      "street": "Ortigara 171",
+      "city": "Vimercate",
+      "country": "Italy"
+    }
+  ]
+}
+```
+
+#### 📃 List All Employees (GET)
+```bash
+http://localhost:8080/all
+```
+
+#### 🔍 Get Employee by ID (GET)
+```bash
+http://localhost:8080/id/<PASTE_THE_DOCUMENT_ID>
+```
+
+#### ❌ Delete Employee by ID (DELETE)
+```bash
+http://localhost:8080/id/<PASTE_THE_DOCUMENT_ID>
+```
+
+#### 💵 Filter Employees by Salary Range (GET)
+```bash
+http://localhost:8080/salary/range/<START_SALARY>/<END_SALARY>
+```
+
+#### ✏️ Update Employee (PUT)
+```bash
+http://localhost:8080/
+```
+**Request Body Example:**
+```json
+{
+  "id": "<PASTE_THE_DOCUMENT_ID>",
+  "name": "Edmundo",
+  "surname": "Souza",
+  "salary": "7500",
+  "emails": ["blabla@google.com", "blabla@msn.com"],
+  "address": [
+    {
+      "addressType": "Street",
+      "street": "Ortigara 9620",
+      "city": "Trento",
+      "country": "Italy"
+    },
+    {
+      "addressType": "Street",
+      "street": "Ortigara 171",
+      "city": "Vimercate",
+      "country": "Italy"
+    }
+  ]
+}
+```
+
+---
+
+## 📚 API Documentation
+
+Access the Swagger UI at:  
+👉 `http://localhost:8080/swagger-ui/index.html`
